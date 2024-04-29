@@ -1,0 +1,6 @@
+@He.BaseService.Api_HostAddress = http://localhost:5004
+
+GET {{He.BaseService.Api_HostAddress}}/Base/api/v1/Test/Get
+Accept: application/json
+
+###
