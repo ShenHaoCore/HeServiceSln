@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Text;
 
-namespace He.Common.Extension
+namespace He.Framework.Extension.Serilog
 {
     /// <summary>
     /// 

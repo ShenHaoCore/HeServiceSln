@@ -22,7 +22,7 @@ namespace He.UserService.ApiBehand.Common
             builder.RegisterAssemblyTypes(typeof(UserServiceBll).Assembly).Where(t => typeof(UserServiceBll).IsAssignableFrom(t) && t != typeof(UserServiceBll)).PropertiesAutowired();
             builder.RegisterAssemblyTypes(typeof(UserServiceDal).Assembly).Where(t => typeof(UserServiceDal).IsAssignableFrom(t) && t != typeof(UserServiceDal)).PropertiesAutowired();
             builder.RegisterType<Alipay>().Keyed<IPayment>(BusinessEnum.Payment.Alipay);
-            builder.RegisterType<WeChat>().Keyed<IPayment>(BusinessEnum.Payment.WeChat);
+            builder.RegisterType<Business.Payment.WeChat>().Keyed<IPayment>(BusinessEnum.Payment.WeChat);
             builder.RegisterType<UnionPay>().Keyed<IPayment>(BusinessEnum.Payment.UnionPay);
         }
     }

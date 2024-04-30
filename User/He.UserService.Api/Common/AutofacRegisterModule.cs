@@ -3,6 +3,7 @@ using He.Business.Enum;
 using He.Business.Payment;
 using He.UserService.Bll.Common;
 using He.UserService.Dal.Common;
+using He.WeChat.WeChatPay.V3;
 using Microsoft.AspNetCore.Mvc;
 
 namespace He.UserService.Api.Common
@@ -22,8 +23,9 @@ namespace He.UserService.Api.Common
             builder.RegisterAssemblyTypes(typeof(UserServiceBll).Assembly).Where(t => typeof(UserServiceBll).IsAssignableFrom(t) && t != typeof(UserServiceBll)).PropertiesAutowired();
             builder.RegisterAssemblyTypes(typeof(UserServiceDal).Assembly).Where(t => typeof(UserServiceDal).IsAssignableFrom(t) && t != typeof(UserServiceDal)).PropertiesAutowired();
             builder.RegisterType<Alipay>().Keyed<IPayment>(BusinessEnum.Payment.Alipay);
-            builder.RegisterType<WeChat>().Keyed<IPayment>(BusinessEnum.Payment.WeChat);
+            builder.RegisterType<Business.Payment.WeChat>().Keyed<IPayment>(BusinessEnum.Payment.WeChat);
             builder.RegisterType<UnionPay>().Keyed<IPayment>(BusinessEnum.Payment.UnionPay);
+            builder.RegisterType<WeChatClient>().As<IWeChatClient>().SingleInstance();
         }
     }
 }

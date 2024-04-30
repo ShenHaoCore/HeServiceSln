@@ -1,5 +1,4 @@
-﻿using SqlSugar;
-using System.Collections;
+﻿using System.Collections;
 using System.ComponentModel;
 
 namespace He.Common.Extension
